@@ -12,7 +12,7 @@ import { Configuration } from "openai";
 import { OpenAIApi } from "openai";
 import { googleTool } from "./tools/google";
 
-const openAIApiKey = "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";
+const openAIApiKey = process.env.OPENAI_API_KEY!;
 
 const params = {
   verbose: true,
