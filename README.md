@@ -26,3 +26,7 @@ PLAY_HT_USER_ID=
 
 4. `npm install`
 5. `npm start`
+
+--- 
+
+Follow me on [Twitter](https://twitter.com/RafalWilinski)
