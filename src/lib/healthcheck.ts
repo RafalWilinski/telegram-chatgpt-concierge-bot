@@ -9,5 +9,7 @@ export async function healthcheck() {
     res.send("ok");
   });
 
+  console.log("Healthcheck server listening on port", port);
+
   app.listen(port);
 }
