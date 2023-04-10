@@ -8,6 +8,9 @@
     "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
     "start": "ts-node src/index.ts"
   },
+  "engines": {
+    "node": "18"
+  },
   "keywords": [],
   "author": "Rafal Wilinski <rafal@dynobase.dev>",
   "license": "ISC",
