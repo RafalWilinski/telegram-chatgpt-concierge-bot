@@ -5,7 +5,7 @@
 This is a Telegram bot that uses:
 
 - OpenAI's ChatGPT, obviously, as "the brain"
-- LangchainJS to constructs prompts, handle convo history and interact with Google
+- [LangchainJS](https://github.com/hwchase17/langchainjs) to constructs prompts, handle convo history and interact with Google
 - OpenAI's Whisper API to generate text from voice
 - [Play.ht](https://play.ht) to generate voice from text and reply to voice messages
 
