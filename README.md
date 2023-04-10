@@ -15,7 +15,7 @@ This is a Telegram bot that uses:
 
 1. `git clone https://github.com/RafalWilinski/telegram-chatgpt-concierge-bot`
 2. `cd telegram-chatgpt-concierge-bot`
-3. `mkdir .env` and fill the following:
+3. `touch .env` and fill the following:
 
 ```
 TELEGRAM_TOKEN=
