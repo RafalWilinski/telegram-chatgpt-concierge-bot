@@ -30,3 +30,5 @@ PLAY_HT_USER_ID=
 --- 
 
 Follow me on [Twitter](https://twitter.com/RafalWilinski)
+
+Discuss on [Twitter](https://twitter.com/rafalwilinski/status/1645123663514009601) or [HackerNews](https://news.ycombinator.com/item?id=35510516)
