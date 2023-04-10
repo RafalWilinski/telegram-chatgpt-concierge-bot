@@ -8,12 +8,15 @@ import { textToSpeech } from "./lib/htApi";
 import { createReadStream } from "fs";
 import { Model as ChatModel } from "./models/chat";
 import { Model as ChatWithTools } from "./models/chatWithTools";
+import { healthcheck } from "./lib/healthcheck";
 
 const workDir = "./tmp";
 const telegramToken = process.env.TELEGRAM_TOKEN!;
 
 const bot = new Telegraf(telegramToken);
 let model = new ChatWithTools();
+
+healthcheck();
 
 bot.start((ctx) => {
   ctx.reply("Welcome to my Telegram bot!");
