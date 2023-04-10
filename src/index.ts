@@ -5,7 +5,7 @@ import { Telegraf } from "telegraf";
 import { downloadVoiceFile } from "./lib/downloadVoiceFile";
 import { postToWhisper } from "./lib/postToWhisper";
 import { textToSpeech } from "./lib/htApi";
-import { createReadStream } from "fs";
+import { createReadStream, existsSync, mkdirSync } from "fs";
 import { Model as ChatModel } from "./models/chat";
 import { Model as ChatWithTools } from "./models/chatWithTools";
 import { healthcheck } from "./lib/healthcheck";
@@ -15,6 +15,10 @@ const telegramToken = process.env.TELEGRAM_TOKEN!;
 
 const bot = new Telegraf(telegramToken);
 let model = new ChatWithTools();
+
+if (!existsSync(workDir)) {
+  mkdirSync(workDir);
+}
 
 healthcheck();
 
