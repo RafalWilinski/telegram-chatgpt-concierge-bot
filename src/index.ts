@@ -40,19 +40,33 @@ bot.on("voice", async (ctx) => {
   await ctx.reply(`Transcription: ${transcription}`);
   await ctx.sendChatAction("typing");
 
-  const response = await model.call(transcription);
+  let response;
+  try {
+    response = await model.call(transcription);
+  } catch (error) {
+    console.log(error);
+    await ctx.reply(
+      "Whoops! There was an error while talking to OpenAI. See logs for details."
+    );
+  }
 
   console.log(response);
 
   await ctx.reply(response);
-  const responseTranscriptionPath = await textToSpeech(response);
 
-  await ctx.sendChatAction("typing");
-
-  await ctx.replyWithVoice({
-    source: createReadStream(responseTranscriptionPath),
-    filename: localFilePath,
-  });
+  try {
+    const responseTranscriptionPath = await textToSpeech(response);
+    await ctx.sendChatAction("typing");
+    await ctx.replyWithVoice({
+      source: createReadStream(responseTranscriptionPath),
+      filename: localFilePath,
+    });
+  } catch (error) {
+    console.log(error);
+    await ctx.reply(
+      "Whoops! There was an error while synthesizing the response via play.ht. See logs for details."
+    );
+  }
 });
 
 bot.on("message", async (ctx) => {
@@ -65,9 +79,16 @@ bot.on("message", async (ctx) => {
 
   console.log("Input: ", text);
   await ctx.sendChatAction("typing");
-  const response = await model.call(text);
+  try {
+    const response = await model.call(text);
 
-  await ctx.reply(response);
+    await ctx.reply(response);
+  } catch (error) {
+    console.log(error);
+    await ctx.reply(
+      "Whoops! There was an error while talking to OpenAI. See logs for details."
+    );
+  }
 });
 
 bot.launch();

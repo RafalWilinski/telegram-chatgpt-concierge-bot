@@ -5,6 +5,10 @@ const htApiUserId = process.env.PLAY_HT_USER_ID;
 const htApiSecretKey = process.env.PLAY_HT_SECRET_KEY;
 
 export async function textToSpeech(text: string) {
+  if (!htApiUserId || !htApiSecretKey) {
+    throw new Error("Play.ht API credentials not set.");
+  }
+
   const endpoint = "https://play.ht/api/v1/convert";
   const headers = {
     Authorization: htApiSecretKey,
