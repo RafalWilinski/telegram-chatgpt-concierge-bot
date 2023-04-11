@@ -20,8 +20,6 @@ if (!existsSync(workDir)) {
   mkdirSync(workDir);
 }
 
-healthcheck();
-
 bot.start((ctx) => {
   ctx.reply("Welcome to my Telegram bot!");
 });
@@ -99,7 +97,10 @@ bot.on("message", async (ctx) => {
   }
 });
 
-bot.launch();
+bot.launch().then(() => {
+  console.log("Bot launched");
+  healthcheck();
+});
 
 process.on("SIGTERM", () => {
   bot.stop();
