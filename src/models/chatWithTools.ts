@@ -50,7 +50,7 @@ export class Model {
 
     const response = await this.executor!.call({ input });
 
-    console.log(response);
+    console.log("Model response: " + response);
 
     return response.output;
   }
