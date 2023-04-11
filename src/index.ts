@@ -101,4 +101,8 @@ bot.on("message", async (ctx) => {
 
 bot.launch();
 
+process.on("SIGTERM", () => {
+  bot.stop();
+});
+
 console.log("Bot started");
