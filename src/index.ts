@@ -31,7 +31,18 @@ bot.on("voice", async (ctx) => {
   const voice = ctx.message.voice;
   await ctx.sendChatAction("typing");
 
-  const localFilePath = await downloadVoiceFile(workDir, voice.file_id, bot);
+  let localFilePath;
+
+  try {
+    localFilePath = await downloadVoiceFile(workDir, voice.file_id, bot);
+  } catch (error) {
+    console.log(error);
+    await ctx.reply(
+      "Whoops! There was an error while downloading the voice file. Maybe ffmpeg is not installed?"
+    );
+    return;
+  }
+
   const transcription = await postToWhisper(model.openai, localFilePath);
 
   await ctx.reply(`Transcription: ${transcription}`);
@@ -45,6 +56,7 @@ bot.on("voice", async (ctx) => {
     await ctx.reply(
       "Whoops! There was an error while talking to OpenAI. See logs for details."
     );
+    return;
   }
 
   console.log(response);

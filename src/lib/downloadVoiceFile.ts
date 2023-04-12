@@ -25,10 +25,10 @@ export async function downloadVoiceFile(
     writestream.on("error", reject);
   });
 
-  await new Promise((resolve) => {
+  await new Promise((resolve, reject) => {
     ffmpeg(oggDestination)
       .format("mp3")
-      .on("error", console.error)
+      .on("error", (err) => reject(err))
       .on("end", () => {
         console.log("Conversion finished!");
         resolve(void 0);
