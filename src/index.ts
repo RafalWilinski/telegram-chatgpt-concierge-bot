@@ -8,7 +8,6 @@ import { textToSpeech } from "./lib/htApi";
 import { createReadStream, existsSync, mkdirSync } from "fs";
 import { Model as ChatModel } from "./models/chat";
 import { Model as ChatWithTools } from "./models/chatWithTools";
-import { healthcheck } from "./lib/healthcheck";
 
 const workDir = "./tmp";
 const telegramToken = process.env.TELEGRAM_TOKEN!;
@@ -99,11 +98,8 @@ bot.on("message", async (ctx) => {
 
 bot.launch().then(() => {
   console.log("Bot launched");
-  healthcheck();
 });
 
 process.on("SIGTERM", () => {
   bot.stop();
 });
-
-console.log("Bot started");
