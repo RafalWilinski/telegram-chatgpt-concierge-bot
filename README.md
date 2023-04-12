@@ -1,5 +1,7 @@
 # Telegram ChatGPT Concierge Bot (+ Voice!)
 
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/e7XF13?referralCode=eZ-TPi)
+
 ![Telegram ChatGPT Concierge Bot](./img/demo.png)
 
 This is a Telegram bot that uses:
