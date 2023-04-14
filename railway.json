@@ -7,7 +7,7 @@
     "nixpacksPlan": {
       "phases": {
         "setup": {
-          "nixPkgs": ["ffmpeg"]
+          "nixPkgs": ["...", "ffmpeg"]
         }
       }
     }
