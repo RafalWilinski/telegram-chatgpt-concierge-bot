@@ -24,6 +24,7 @@ TELEGRAM_TOKEN=
 OPENAI_API_KEY=
 PLAY_HT_SECRET_KEY=
 PLAY_HT_USER_ID=
+PLAY_HT_VOICE= # check docs for available voices https://playht.github.io/api-docs-generator/#utra-realistic-voices
 OPENAI_MODEL=gpt-3.5-turbo # only if you don't have access to GPT-4
 ```
 
