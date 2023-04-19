@@ -25,6 +25,9 @@ OPENAI_API_KEY=
 PLAY_HT_SECRET_KEY=
 PLAY_HT_USER_ID=
 PLAY_HT_VOICE= # check docs for available voices https://playht.github.io/api-docs-generator/#utra-realistic-voices
+AZURE_SPEECH_KEY= # Optionally, you can use azure's tts service, check docs to get speech_key、speech_region、voice_agent. https://azure.microsoft.com/en-us/products/cognitive-services/text-to-speech/ 
+AZURE_SPEECH_REGION= # eg, eastus
+AZURE_VOICE_AGENT= # eg, en-US-AnaNeural
 OPENAI_MODEL=gpt-3.5-turbo # only if you don't have access to GPT-4
 ```
 

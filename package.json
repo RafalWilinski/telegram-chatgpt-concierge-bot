@@ -23,6 +23,7 @@
     "fluent-ffmpeg": "^2.1.2",
     "googlethis": "^1.7.1",
     "langchain": "latest",
+    "microsoft-cognitiveservices-speech-sdk": "^1.27.0",
     "openai": "^3.2.1",
     "telegraf": "^4.12.2",
     "ts-node": "^10.9.1",
