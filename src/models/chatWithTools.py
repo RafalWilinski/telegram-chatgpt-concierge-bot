@@ -1,19 +1,21 @@
-import json
+#import json
 import os
-import time
-from datetime import datetime
-from typing import Dict
+#import time
+#from datetime import datetime
+#from typing import Dict
 
-import google.auth
-import google.oauth2.credentials
-import google_auth_oauthlib.flow
-import requests
-from google.oauth2.credentials import Credentials
-from googleapiclient.discovery import build
+#import google.auth
+#import google.oauth2.credentials
+#import google_auth_oauthlib.flow
+#import requests
+#from google.oauth2.credentials import Credentials
+#from googleapiclient.discovery import build
 
-from langchain.agents import AgentExecutor, Tool, initialize_agent_executor
+from langchain.agents import AgentExecutor, Tool, initialize_agent_executor 
 from langchain.chat_models import ChatOpenAI
 from langchain.memory import BufferMemory
+from tools.google import GoogleTool
+from openai import OpenAIApi, Configuration
 
 openAIApiKey = os.environ['OPENAI_API_KEY']
 
@@ -34,8 +36,10 @@ class Model:
         self.executor: AgentExecutor
         self.openai: ChatOpenAI
         self.model: ChatOpenAI
-
-        self.tools = [googleTool]
+        configuration = Configuration({
+            apiKey: openAIApiKey,
+        })
+        self.tools = [GoogleTool]
         self.openai = OpenAIApi(configuration)
         self.model = ChatOpenAI(params, configuration)
 

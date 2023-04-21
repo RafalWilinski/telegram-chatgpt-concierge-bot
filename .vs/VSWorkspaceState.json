@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src"
+    "\\src",
+    "\\src\\models"
   ],
-  "SelectedNode": "\\src\\index.ts",
+  "SelectedNode": "\\src\\models\\chat.py",
   "PreviewInSolutionExplorer": false
 }
