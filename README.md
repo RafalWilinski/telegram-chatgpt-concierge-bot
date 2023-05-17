@@ -26,6 +26,7 @@ PLAY_HT_SECRET_KEY=
 PLAY_HT_USER_ID=
 PLAY_HT_VOICE= # check docs for available voices https://playht.github.io/api-docs-generator/#utra-realistic-voices
 OPENAI_MODEL=gpt-3.5-turbo # only if you don't have access to GPT-4
+#SERVE_THIS_USER_ONLY=99999999 # uncomment this if you want to only serve this user id. The ID will be printed on stdout.
 ```
 
 4. `npm install`

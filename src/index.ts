@@ -28,6 +28,15 @@ bot.help((ctx) => {
 });
 
 bot.on("voice", async (ctx) => {
+
+  if(process.env.SERVE_THIS_USER_ONLY && parseInt(process.env.SERVE_THIS_USER_ONLY) !== ctx.message.chat.id){
+    console.log(`User ${ctx.message.chat.id.toString()} is not allowed to be served.`);
+    await ctx.reply(
+      "Sorry, you're not allowed to be served by me."
+    );
+    return;
+  }
+
   const voice = ctx.message.voice;
   await ctx.sendChatAction("typing");
 
