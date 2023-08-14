@@ -1,3 +1,5 @@
 .env
 node_modules
 tmp
+.DS_Store
+.vscode
