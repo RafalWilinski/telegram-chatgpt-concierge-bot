@@ -32,8 +32,14 @@ OPENAI_MODEL=gpt-3.5-turbo # only if you don't have access to GPT-4
 4. `npm install`
 5. `npm start`
 
+### Consulting
+
+I, @RafalWilinski (creator of this repo), offer consulting. If you are interested on hiring weekly hours with me on a retainer, feel free to email me at raf.wilinski@gmail.com
+
 ---
 
 Follow me on [Twitter](https://twitter.com/RafalWilinski)
 
 Discuss on [Twitter](https://twitter.com/rafalwilinski/status/1645123663514009601) or [HackerNews](https://news.ycombinator.com/item?id=35510516)
+
+Sponsored by [ChatWithCloud](https://chatwithcloud.ai)
